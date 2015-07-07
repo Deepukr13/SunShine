@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rpro</title>
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+</head>
+<body>
+<div id="wrapper"><!-- #wrapper -->
+
+	<header><!-- header -->
+		<h1><a href="#">SunShine!!</a></h1>
+		<h2>"Life is a gift ...gift it" </h2>
+	</header><!-- end of header -->
+	
+	<nav><!-- top nav -->
+		<div class="menu">
+			<ul>
+				<li><a href="/page/home">Home</a></li>
+				<li><a href="/page/guest">Guest</a></li>
+				<li><a href="/page/member">Member</a></li>
+				<li><a href="/page/search">SearchDonor</a></li>
+				<li><a href="/page/contact">Contact Us</a></li>
+				<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+	
+	<section id="main"><!-- #main content and sidebar area -->
+			<section id="content"><!-- #content -->
+			
+			<h2> <%= if user_signed_in? then current_user.name end %></h2>
+			        		<%= yield %>
+						
+						
+					<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>	
+			</section><!-- end of #content -->
+
+		<aside id="sidebar"><!-- sidebar -->
+				<h3>Activities</h3>
+					<ul>
+						<li><a href="/page/member">Profile</a></li>
+						<li><a href="/page/search">Search for Donor</a></li>
+						<li><a href="http://www.medindia.net/healthnews/Blood-Donation-news.asp" target="_blank">News and Events</a></li>
+					</ul>
+					
+				<h3>Sponsors</h3>
+					<%image_tag "ad125.jpg" %><br /><%image_tag "ad125.jpg" %><br /><br />
+
+				<h3>Connect With Us</h3>
+					<ul>
+						<li><a href="http://www.twitter.com " target="_blank">Twitter</a></li>
+						<li><a href="http://www.facebook.com" target="_blank">Facebook</a></li>
+					</ul>
+
+		</aside><!-- end of sidebar -->
+
+	</section><!-- end of #main content and sidebar-->
+	
+		<footer>
+		<section id="footer-area">
+
+			<section id="footer-outer-block">
+					<aside class="footer-segment">
+							<h4>stuff1</h4>
+								<ul>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+					</aside><!-- end of #first footer segment -->
+
+					<aside class="footer-segment">
+							<h4>Stuff2</h4>
+								<ul>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+					</aside><!-- end of #second footer segment -->
+
+					<aside class="footer-segment">
+							<h4>Stuff3</h4>
+								<ul>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+					</aside><!-- end of #third footer segment -->
+					
+					<aside class="footer-segment">
+							<h4>stuff4</h4>
+								<p>&copy; 2013 </br><a href="#">sunshin.com</a></br>all rights reserved</p>
+					</aside><!-- end of #fourth footer segment -->
+
+			</section><!-- end of footer-outer-block -->
+
+		</section><!-- end of footer-area -->
+	</footer>
+	
+</div><!-- #wrapper -->
+
+
+</body>
+</html>

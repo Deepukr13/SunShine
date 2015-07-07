@@ -1,0 +1,39 @@
+<h1>Register now to get full access !!!!</h1>
+
+
+ 
+
+
+
+
+  <%= will_paginate @people %>
+  <% @people.each do |person| %>
+  <div class="img" style="float: left" >
+  <%= image_tag person.image %>
+  </div>
+  <div class="data">
+    Name :<%= person.firstName %><%= person.lastName %><br/>
+    Address :<%= person.address %></br>
+    Dob :<%= person.dob %></br>
+    Phone :<%= person.phone %></br>
+    BloodGroup :<%= person.blood %></br>
+    Last given :<%= person.last_given %></b>
+    Weight :<%= person.weight %></br>
+    Email :<%= person.email %></br>    
+    
+    <%= link_to 'Show', person %></br>
+    
+    <%= link_to 'Edit',edit_person_path(person) %></br>
+    <% if current_user.try(:admin) %>
+    <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% end %>  </br>
+       
+    <br/><br/>
+    
+     </div>
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

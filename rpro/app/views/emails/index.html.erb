@@ -1,0 +1,25 @@
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @emails.each do |email| %>
+  <tr>
+    <td><%= email.From %></td>
+    <td><%= email.To %></td>
+    <td><%= email.Body %></td>
+    <td><%= link_to 'Show', email %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email', new_email_path %>

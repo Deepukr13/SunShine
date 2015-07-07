@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  home: MyString
+  guest: MyString
+  member: MyString
+  search: MyString
+  donor: MyString
+  community: MyString
+  news: MyString
+  contact: MyString
+  login: MyString
+
+two:
+  home: MyString
+  guest: MyString
+  member: MyString
+  search: MyString
+  donor: MyString
+  community: MyString
+  news: MyString
+  contact: MyString
+  login: MyString

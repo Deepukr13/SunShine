@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p class="image" style="float: left">
+  <%= image_tag @person.image %>
+</p>
+<p calss="text" style="float: right">  
+	<table>
+   </tr>NAME:<%= @person.firstName %><%= "  "%><%= @person.lastName %></br></tr>
+   <tr>ADDRESS:<%= @person.address %></br></tr>
+   <tr>D.O.B:<%= @person.dob %></br></tr>
+   <tr>PHONE.No:<%= @person.phone %></br></tr>
+   <tr>BLOOD GROUP:<%= @person.blood %></br></tr>
+   <tr>LAST DONATED ON:<%= @person.last_given %></br></tr>
+   <tr>WEIGHT:<%= @person.weight %></br></tr>
+  <tr>EMAIL ID:<%= @person.email %></br></tr>
+  </p>
+  </tr>
+  </table>
+
+
+
+
+<%= link_to 'Back', stores_path %>

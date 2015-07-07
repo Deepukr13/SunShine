@@ -1,0 +1,27 @@
+<%= form_tag  people_search_path, :method => 'post' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+ <% @people.each do |person| %>
+  <div class="img" style="float: left" >
+  <%= image_tag person.image %>
+  </div>
+  <div class="data">
+    Name :<%= person.firstName %><%= person.lastName %><br/>
+    Address :<%= person.address %></br>
+    Dob :<%= person.dob %></br>
+    Phone :<%= person.phone %></br>
+    BloodGroup :<%= person.blood %></br>
+    Last given :<%= person.last_given %></b>
+    Weight :<%= person.weight %></br>
+    Email :<%= person.email %></br>    
+    <%= link_to 'Show', person %></br>
+    <%= link_to 'Email Recipe', email_recipe_path %>
+    <br/><br/>
+    
+     </div>
+<% end %>
